@@ -148,7 +148,7 @@ GEM
     public_suffix (3.1.1)
     pygments.rb (1.1.2)
       multi_json (>= 1.0.0)
-    rack (2.0.8)
+    rack (2.2.2)
     rainbow (3.0.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
