@@ -1,0 +1,40 @@
+---
+contentTags:
+  platform:
+  - Cloud
+  - Server v4+
+---
+= Troubleshoot
+:page-layout: classic-docs
+:page-liquid:
+:page-description: Troubleshoot CircleCI and various setups and integrations.
+:icons: font
+:experimental:
+
+This page offers troubleshooting suggestions for the following aspects of CircleCI:
+
+[.table]
+[cols=2*]
+|===
+| <<#orbs,Orbs>>
+| <<#container-runner,Container runner>>
+
+| <<#pipelines,Pipelines>>
+| <<#machine-runner,Machine runner>>
+
+|===
+
+== Orbs
+
+include::../_includes/partials/troubleshoot/orb-troubleshoot-snip.adoc[]
+
+== Pipelines
+
+include::../_includes/partials/troubleshoot/pipelines-troubleshoot-snip.adoc[]
+
+// Self-hosted runner (H2s need to be in the snippet for now)
+include::../_includes/partials/troubleshoot/self-hosted-runner-troubleshoot-snip.adoc[]
+
+//== Releases
+// Removing this section until the Antora migration when the xrefs will work correctly
+//include::../_includes/partials/troubleshoot/releases-troubleshoot.adoc[]

@@ -21,16 +21,11 @@ exclude:
   - .jekyll-cache
 
 plugins:
-  - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-asciidoc
-  - jekyll-target-blank
-  - jekyll-toc
   - jekyll-last-modified-at
-  - jekyll-timeago
-  - jekyll-redirect-from
 
-# Approximate distance, with customizable threshold, 
+# Approximate distance, with customizable threshold,
 # ie: at depth one 366 days becomes 1 year ago instead of 1 year and 1 day ago
 jekyll_timeago:
   depth: 1
@@ -45,20 +40,13 @@ algolia:
     - html
     - md
     - adoc
-  nodes_to_index: 'p,h1'
+  max_record_size: 20000
+  nodes_to_index: "p,h1"
   settings:
-    highlightPreTag: '<strong>'
-    highlightPostTag: '</strong>'
-    attributesToSnippet: [
-      'content:80',
-      'headings',
-      'title'
-    ]
-    attributesToHighlight: [
-      'content:80',
-      'headings',
-      'title'
-    ]
+    highlightPreTag: "<strong>"
+    highlightPostTag: "</strong>"
+    attributesToSnippet: ["content:80", "headings", "title"]
+    attributesToHighlight: ["content:80", "headings", "title"]
     minProximity: 3
 
 toc:
@@ -72,38 +60,43 @@ kramdown:
 liquid:
   error_mode: strict
 
+server-attributes: &server
+  imagesdir: /docs/assets/img/docs/
+  relfileprefix: ../
+  relfilesuffix: /
+  outfilesuffix: /index.html
+  serverversion4: 4.0.6
+  serverversion41: 4.1.10
+  serverversion42: 4.2.7
+  serverversion43: 4.3.9
+  serverversion44: 4.4.7
+  serverversion45: 4.5.5
+  serverversion46: 4.6.2
+  serverversion47: 4.7.0
+  serverversion48: 4.8.0
+  serverversion: 3.4.8
+  terraformversion: 0.15.4
+  kubernetesversions: 1.26 - 1.31
+  kubectlversion: 1.19
+  helmversion: 3.9.2
+  helmdiffversion: 3.5.0
+  kotsversion: 1.65.0
+
 asciidoc:
-  attributes:
-      serverversion: 3.3.1
-      terraformversion: 0.15.4
-      kubectlversion: 1.19
-      helmversion: 3.4.0
-      kotsversion: 1.65.0
+  attributes: *server
 
 asciidoctor:
-  base_dir: _cci2/
+  base_dir: :docdir
   safe: unsafe
-  attributes:
-    imagesdir: /docs/assets/img/docs/
-    relfileprefix: ../
-    outfilesuffix: /index.html
-    serverversion: 3.3.1
-    terraformversion: 0.15.4
-    kubectlversion: 1.19
-    helmversion: 3.4.0
-    kotsversion: 1.65.0
+  attributes: *server
 
 collections:
-  # this is named with an underscore because it needs to be processed
-  # before the collections that render the actual pages.
-  # jekyll is processing in alpha order...
-  _glossary:
   cci2:
     name: "2.0 Docs"
     site_section: true
     output: true
-    permalink: /2.0/:path/
-    prefix: "/2.0"
+    permalink: :path/
+    prefix: "/"
     selectorName: "2.0"
   api:
     name: "API Docs"
@@ -116,8 +109,8 @@ collections:
     name: "2.0 Docs"
     site_section: true
     output: true
-    permalink: /ja/2.0/:path/
-    prefix: "/ja/2.0"
+    permalink: /ja/:path/
+    prefix: "/ja"
     selectorName: "2.0"
   style:
     name: "Style Guide"
@@ -156,14 +149,16 @@ defaults:
       search: true
       toc: true # Enable TOC by default
       suggested: false # Disable helpful resources section by default
-      sitemap: false # Disable sitemap by default (only want in prod)
+      sitemap: true # Enable sitemap by default
       readtime: true # Enable Read Time by default
+      contentTags: null
+      sectionTags: null
 
 t:
-    translation_in_progress:
-        ja: "このページはただいま翻訳中です"
+  translation_in_progress:
+    ja: "このページはただいま翻訳中です"
 
-segment: 'mAJ9W2SwLHgmJtFkpaXWCbwEeNk9D8CZ'
+segment: "mAJ9W2SwLHgmJtFkpaXWCbwEeNk9D8CZ"
 
 analytics:
   events:
@@ -172,5 +167,4 @@ rollbar_env: development
 
 # Optimizely SDK key for dev env
 optimizely: "GfYszBpMkefBSwiiEkH3b3"
-
 # server_version: "2.18.4"

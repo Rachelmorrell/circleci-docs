@@ -1,0 +1,22 @@
+---
+
+contentTags:
+  platform:
+  - クラウド
+  - Server v4.x
+  - Server v3.x
+---
+= CircleCI のセルフホストランナーに関するよく寄せられるご質問
+:page-layout: classic-docs
+:page-liquid:
+:page-description: このページでは、CircleCI のセルフホストランナーに関してよく寄せられるご質問にお答えします。
+:icons: font
+:toc: macro
+:toc-title:
+
+このページでは、CircleCI のセルフホストコンテナとマシンランナーに関してよく寄せられるご質問にお答えします。
+
+[#self-hosted-runner-faqs]
+== FAQ
+
+include::../_includes/snippets/faq/ja/self-hosted-runner-faq-snip.adoc[]
