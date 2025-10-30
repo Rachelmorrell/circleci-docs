@@ -146,7 +146,7 @@ GEM
       multi_json (>= 1.0.0)
     racc (1.6.0)
     rainbow (3.0.0)
-    rake (13.0.3)
+    rake (13.3.1)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
